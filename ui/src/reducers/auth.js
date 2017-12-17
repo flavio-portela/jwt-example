@@ -2,7 +2,7 @@ import {
     FETCH_AUTH_REQUEST,
     FETCH_AUTH_SUCCESS,
     FETCH_AUTH_ERROR
-} from '../actions';
+} from '../constants/ActionTypes';
 
 const auth = (state = null, action) => {
     switch(action.type){
