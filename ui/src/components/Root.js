@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import NavBar from './NavBar';
@@ -18,10 +18,4 @@ const Root = ({ store }) => (
     </Provider>
 );
 
-const mapStateToProps = state => ({
-    auth: state.auth
-});
-
-export default connect(
-    mapStateToProps
-)(Root);
+export default Root;
