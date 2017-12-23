@@ -14,7 +14,9 @@ router.post('/login', async (req, res) => {
     // Check if we found the user with the given email
     if (!user) {
         res.status(404);
-        return res.send(`We could not find a user with the email: ${email}`);
+        return res.json({
+            message: `We could not find a user with the email: ${email}`
+        });
     }
 
     // If the user exists, now we need to validate that this is the correct password
