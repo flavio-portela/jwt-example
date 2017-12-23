@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import NavBar from './NavBar';
 import Home from './Home';
-import Login from './Login';
+import Login from '../containers/Login';
 
 const Root = ({ store }) => (
     <Provider store={store}>
