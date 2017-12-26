@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import LoginForm from '../components/LoginForm';
 
-class Login extends Component{
+class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -46,7 +46,7 @@ class Login extends Component{
     }
 };
 
-Login.PropTypes = {
+Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
