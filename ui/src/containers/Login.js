@@ -41,6 +41,7 @@ class Login extends Component {
                 values={this.state.values}
                 handleInputChange={this.handleInputChange}
                 handleSubmit={this.handleSubmit}
+                auth={this.props.auth}
              />
         );
     }
