@@ -7,14 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Root from './components/Root';
 import reducers from './reducers';
 
-const initialState = {
-    auth: {
-        token: null,
-        isFetching: false,
-        isUserAuthenticated: false,
-        error: null        
-    }
-}
+const initialState = {};
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(
