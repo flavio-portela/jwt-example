@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LoginForm  = ({handleInputChange, handleSubmit, values}) => {
+const LoginForm  = ({handleInputChange, handleSubmit, values, auth}) => {
+    let ErrorMessage = ({message}) => (
+        <div className="col-md-12">
+            <div className="alert alert-danger" role="alert">
+                { message }
+            </div>
+        </div>
+    );
     return(
         <div className='row justify-content-md-center'>
+            { auth.error && <ErrorMessage message={auth.error}/>}
             <div className='col-md-5'>
-                <form onSubmit={handleSubmit} id="frm-login">
-                    <div className='form-group'>
+                <form onSubmit={handleSubmit}>
+                    <div className  ='form-group'>
                         <label htmlFor='username'>Email</label>
                         <input type='text' id='username' className='form-control' 
                             name='email'
@@ -21,7 +29,12 @@ const LoginForm  = ({handleInputChange, handleSubmit, values}) => {
                             value={values.password}/>
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary form-control">Submit</button>
+                        <button 
+                            type="submit" 
+                            className="btn btn-primary form-control" 
+                            disabled={auth.isFetching}>
+                            Submit
+                        </button>
                     </div>
                 </form>
             </div>
