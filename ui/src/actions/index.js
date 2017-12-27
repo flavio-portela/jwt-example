@@ -23,7 +23,7 @@ export const loginUser = ({ email, password }) => {
         }).catch( e => {
             dispatch({ 
                 type: FETCH_AUTH_ERROR, 
-                error: e.message 
+                error: e.response.data.message 
             });
         });
     }
