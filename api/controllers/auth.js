@@ -15,7 +15,7 @@ router.post('/login', async (req, res) => {
     if (!user) {
         res.status(404);
         return res.json({
-            message: `We could not find a user with the email: ${email}`
+            message: `We could not find a user with that email`
         });
     }
 
@@ -29,7 +29,9 @@ router.post('/login', async (req, res) => {
     }
 
     res.status(400);
-    return res.send('The credentias are invalid');
+    return res.json({
+        message: 'Invalid password'
+    });
 });
 
 module.exports = router;
